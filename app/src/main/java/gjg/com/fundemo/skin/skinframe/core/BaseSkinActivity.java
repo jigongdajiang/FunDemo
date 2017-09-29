@@ -54,7 +54,7 @@ public class BaseSkinActivity extends AppCompatActivity implements LayoutInflate
     }
 
     /**
-     * 拦截View的创建
+     * 通过源码得知，指定自己的LayoutInflaterFactory可以拦截View的创建
      */
     private void installMyViewFactory() {
         if (!SkinManager.getInstance().isInit()) {
@@ -68,6 +68,9 @@ public class BaseSkinActivity extends AppCompatActivity implements LayoutInflate
 
     }
 
+    /**
+     * 仿照系统的View创建过程，以实现兼容性
+     */
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
         // 创建View

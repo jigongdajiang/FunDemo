@@ -19,6 +19,9 @@ import gjg.com.fundemo.skin.skinframe.core.SkinResource;
 
 public enum  SkinType {
     TEXTCOLOR("textColor") {
+        /**
+         * 根据资源名称 如 @color/main_big_color中的main_big_color 解析资源属性进行重新设置
+         */
         @Override
         public void skin(View view, String resName) {
             if(view != null && view instanceof TextView){

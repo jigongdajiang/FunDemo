@@ -24,6 +24,9 @@ public class SkinResource {
     private Resources mResources;
     private String mPackageName;
 
+    /**
+     * 根据皮肤资源路径创建对应的Resources
+     */
     public SkinResource(Context context, String skinPath) {
         try{
             Resources surperResource = context.getResources();
