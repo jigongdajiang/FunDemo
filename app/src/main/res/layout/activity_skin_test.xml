@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll_main"
+    android:background="@color/skin_main_bg">
+
+    <Button
+        android:id="@+id/btn_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="换肤"
+        android:onClick="skinChange"
+        android:textColor="@color/skin_btn_text_color"
+        android:background="@color/skin_btn_bg"/>
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="恢复"
+        android:onClick="skinReset"
+        android:textColor="@color/skin_btn_text_color"
+        android:background="@color/skin_btn_bg"/>
+
+    <Button
+        android:id="@+id/btn_jump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="跳转"
+        android:onClick="jump"
+        android:textColor="@color/skin_btn_text_color"
+        android:background="@color/skin_btn_bg"/>
+
+    <ImageView
+        android:id="@+id/img_ns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/img_logo"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/skin_text_color"
+        android:layout_marginTop="20dp"
+        android:text="Angelababy（杨颖），1989年2月28日出生于上海市，华语影视女演员、时尚模特。2003年，Angelababy以模特身份出道，此后，她因担任时尚模特而在香港崭露头角。2007年，她开始将工作重心转向大银幕。2011年，她在爱情片《夏日乐悠悠》中首次担任女主角。2012年，凭借言情片《第一次》获得第13届华语电影传媒大奖最受瞩目女演员奖。2013年，Angelababy与其她三位女艺人被《南都娱乐周刊》选为新“四小花旦”；同年，她还完成了个人的荧屏处女作《大汉情缘之云中歌》。"/>
+
+
+</LinearLayout>

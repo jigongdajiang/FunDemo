@@ -1,0 +1,4 @@
+gjg/com/fundemo/MainActivity.class
+gjg/com/fundemo/BuildConfig.class
+gjg/com/fundemo/FunApplication.class
+gjg/com/fundemo/fix/FixTestActivity.class
