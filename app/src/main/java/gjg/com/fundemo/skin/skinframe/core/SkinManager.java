@@ -54,8 +54,6 @@ public class SkinManager {
     /**
      * 只有手动才会调用
      * 加载皮肤并换肤
-     * @param skinPath
-     * @return
      */
     public int loadSkin(String skinPath) {
         int checkResult = SkinManager.getInstance().manualLoadCheckSkinPath(skinPath);
@@ -101,8 +99,6 @@ public class SkinManager {
 
     /**
      * 自动加载皮肤时的验证
-     * @param skinPath
-     * @return
      */
     public int autoLoadCheckSkinPath(String skinPath){
         if(TextUtils.isEmpty(skinPath)){

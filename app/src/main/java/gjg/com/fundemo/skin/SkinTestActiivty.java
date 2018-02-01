@@ -45,7 +45,6 @@ public class SkinTestActiivty extends BaseSkinActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        installMyViewFactoryDemo();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skin_test);
         ll_main = (LinearLayout) findViewById(R.id.ll_main);
@@ -54,27 +53,6 @@ public class SkinTestActiivty extends BaseSkinActivity {
         img_ns = (ImageView) findViewById(R.id.img_ns);
         tv_des = (TextView) findViewById(R.id.tv_des);
     }
-
-    private void installMyViewFactoryDemo() {
-        LayoutInflater layoutInflater = LayoutInflater.from(this);
-        if (layoutInflater.getFactory() == null) {
-            //简单测试
-            LayoutInflaterCompat.setFactory(layoutInflater, new LayoutInflaterFactory() {
-                @Override
-                public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-                    Log.e("lanjie", "View创建被拦截--->" + name);
-                    //简单的将Button按钮换成TextView
-                    if (name.equals("Button")) {
-                        TextView textView = new TextView(SkinTestActiivty.this);
-                        textView.setText("原来的按钮被替换了");
-                        return textView;
-                    }
-                    return null;
-                }
-            });
-        }
-    }
-
 
     /**
      * 单纯的换肤原理

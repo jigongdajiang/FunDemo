@@ -7,6 +7,7 @@ package gjg.com.fundemo.skin.skinframe.inflater;
  * @description:
  */
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.TypedArray;
@@ -50,6 +51,7 @@ import java.util.Map;
  * functionality for any inflated widgets. This include theme inheritance from it's parent.
  */
 public class SkinAppCompatViewInflater {
+
 
     private static final Class<?>[] sConstructorSignature = new Class[]{
             Context.class, AttributeSet.class};
@@ -196,7 +198,7 @@ public class SkinAppCompatViewInflater {
         final TypedArray a = context.obtainStyledAttributes(attrs, sOnClickAttrs);
         final String handlerName = a.getString(0);
         if (handlerName != null) {
-            view.setOnClickListener(new DeclaredOnClickListener(view, handlerName));
+            view.setOnClickListener(new SkinAppCompatViewInflater.DeclaredOnClickListener(view, handlerName));
         }
         a.recycle();
     }

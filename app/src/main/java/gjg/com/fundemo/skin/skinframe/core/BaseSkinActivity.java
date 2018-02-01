@@ -1,5 +1,6 @@
 package gjg.com.fundemo.skin.skinframe.core;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ import gjg.com.fundemo.skin.skinframe.sp.SkinSpUtil;
  * @date : 2017/9/26
  * FileName:
  * @description:
+ * 换肤框架基类
  */
 
 
@@ -57,9 +59,11 @@ public class BaseSkinActivity extends AppCompatActivity implements LayoutInflate
      * 通过源码得知，指定自己的LayoutInflaterFactory可以拦截View的创建
      */
     private void installMyViewFactory() {
+        //没有初始化屁股管理器先初始化皮肤管理器
         if (!SkinManager.getInstance().isInit()) {
             SkinManager.getInstance().init(this);
         }
+        //Hook View的创建过程
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         if (layoutInflater.getFactory() == null) {
             //仿照AppCompatActivity 的方法，这里一旦自己设置了，将不会走AppCompatActivity中的工厂
@@ -75,9 +79,9 @@ public class BaseSkinActivity extends AppCompatActivity implements LayoutInflate
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
         // 创建View
         View view = createView(parent, name, context, attrs);
-//        Log.e(TAG,"View-->"+view);
+        Log.e(TAG,"View-->"+view);
         // 解析属性 src background textColor
-        // 1. 一个Activity 对应对个SkinView
+        // 1. 获取皮肤相关属性
         List<SkinAttr> skinAttrs = SkinAttrSupport.getSkinAttrs(context, attrs);
         if (null != view) {
             SkinView skinView = new SkinView(view, skinAttrs);
@@ -94,8 +98,6 @@ public class BaseSkinActivity extends AppCompatActivity implements LayoutInflate
 
     /**
      * 管理SkinView
-     *
-     * @param skinView
      */
     private void manageSkinView(SkinView skinView) {
         List<SkinView> skinViews = SkinManager.getInstance().getSkinViews(this);

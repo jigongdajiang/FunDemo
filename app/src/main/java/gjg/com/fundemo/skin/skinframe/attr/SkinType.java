@@ -14,6 +14,8 @@ import gjg.com.fundemo.skin.skinframe.core.SkinResource;
  * @date : 2017/9/25
  * FileName:
  * @description:
+ * 皮肤属性类型
+ *  例如: textColor  backGround  src 等
  */
 
 
@@ -25,7 +27,9 @@ public enum  SkinType {
         @Override
         public void skin(View view, String resName) {
             if(view != null && view instanceof TextView){
+                //获取资源对象
                 SkinResource skinResource = getSkinResource();
+                //根据属性名称得到属性的最终值
                 ColorStateList color = skinResource.getColorByName(resName);
                 if(null != color){
                     ((TextView)view).setTextColor(color);

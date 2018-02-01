@@ -1,7 +1,5 @@
 package gjg.com.fundemo.skin.skinframe.callback;
 
-import android.content.res.Resources;
-
 import gjg.com.fundemo.skin.skinframe.core.SkinResource;
 
 /**
@@ -9,6 +7,7 @@ import gjg.com.fundemo.skin.skinframe.core.SkinResource;
  * @date : 2017/9/26
  * FileName:
  * @description:
+ * 换肤拓展回调
  */
 
 

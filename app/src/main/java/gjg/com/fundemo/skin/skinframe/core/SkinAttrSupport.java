@@ -24,24 +24,23 @@ public class SkinAttrSupport {
 
     /**
      * 解析定义的属性
-     * @param context
-     * @param attrs
-     * @return
      */
     public static List<SkinAttr> getSkinAttrs(Context context, AttributeSet attrs) {
         List<SkinAttr> skinAttrs = new ArrayList<>();
         //获取所有属性的个数
         int attrCount = attrs.getAttributeCount();
         for(int index = 0; index < attrCount; index++){
+            //获取属性名称
             String attrName = attrs.getAttributeName(index);
+            //获取属性值
             String attrValue = attrs.getAttributeValue(index);
-//            Log.e(TAG,"attrName-->"+attrName + ";  attrValue-->"+attrValue);
+            Log.e(TAG,"attrName-->"+attrName + ";  attrValue-->"+attrValue);
             //根据属性名称，得到类型
             SkinType skinType  = getSkinType(attrName);
             //根据资源值，或者资源名称
             String resName = getResName(context,attrValue);
             if(null != skinType && !TextUtils.isEmpty(resName)){
-//                Log.e(TAG,"skinType-->"+skinType.toString()+";  resName-->"+resName);
+                Log.e(TAG,"skinType-->"+skinType.toString()+";  resName-->"+resName);
                 SkinAttr skinAttr = new SkinAttr(resName,skinType);
                 skinAttrs.add(skinAttr);
             }
@@ -49,6 +48,9 @@ public class SkinAttrSupport {
         return skinAttrs;
     }
 
+    /**
+     * 根据属性值，获取自选属性的名称
+     */
     private static String getResName(Context context, String attrValue) {
         //属性值以@开头的是通过引用方式，有些直接"#FFFFFF"的将不解析，因为换肤是根据加载相同资源名称的皮肤包实现的
         if(!TextUtils.isEmpty(attrValue) && attrValue.startsWith("@")){
@@ -62,6 +64,9 @@ public class SkinAttrSupport {
         return null;
     }
 
+    /**
+     * 获取定义的皮肤属性类型
+     */
     private static SkinType getSkinType(String attrName) {
         //遍历枚举集合
         SkinType[] skinTypes = SkinType.values();

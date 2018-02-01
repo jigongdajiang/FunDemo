@@ -5,6 +5,7 @@ package gjg.com.fundemo.skin.skinframe.config;
  * @date : 2017/9/26
  * FileName:
  * @description:
+ * 换肤框架配置文件
  */
 
 
@@ -43,6 +44,9 @@ public class SkinConfig {
      * 换肤成功
      */
     public static final int SKIN_CHANGE_SUCCESS = 1;
+    /**
+     * 无需恢复
+     */
     public static final int SKIN_CHANGE_UN_NEED_RESTORE = -1;
 
 }

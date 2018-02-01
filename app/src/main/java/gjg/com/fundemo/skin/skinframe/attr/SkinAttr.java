@@ -7,12 +7,13 @@ import android.view.View;
  * @date : 2017/9/25
  * FileName:
  * @description:
+ * 皮肤属性对象
  */
 
 
 public class SkinAttr {
     private String mResName;//资源文件的名称 如main_bg_color
-    private SkinType mSkinType;
+    private SkinType mSkinType;//皮肤属性类型对象
 
     public SkinAttr(String resName, SkinType skinType) {
         this.mResName = resName;

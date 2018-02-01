@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
  * @author : gongdaocai
  * @date : 2017/9/25
  * FileName:
- * @description: 管理资源文件
+ * @description: 皮肤资源管理
  */
 
 
