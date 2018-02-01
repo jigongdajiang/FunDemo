@@ -17,6 +17,7 @@ import java.util.List;
 import gjg.com.fundemo.aidltest.AidlServiceActivity;
 import gjg.com.fundemo.alifix.AliFixTestActivity;
 import gjg.com.fundemo.dbg.DbGuardTestActivity;
+import gjg.com.fundemo.eb.EventBusTestActivity;
 import gjg.com.fundemo.exceptionhandler.ExceptionTextActivity;
 import gjg.com.fundemo.fix.FixTestActivity;
 import gjg.com.fundemo.skin.SkinTestActiivty;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         datas.add(new Bean("热修复测试", FixTestActivity.class));
         datas.add(new Bean("阿里热修复", AliFixTestActivity.class));
         datas.add(new Bean("换肤框架", SkinTestActiivty.class));
+        datas.add(new Bean("EventBus示例及手写", EventBusTestActivity.class));
 
 
         ItemAdapter adapter = new ItemAdapter();
